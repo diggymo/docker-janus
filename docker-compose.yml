@@ -22,11 +22,12 @@ services:
   web:
     build: ./nginx/
     container_name: janus-web
+    networks:
+      - front-tier
     ports:
       - 80:80
       - 8000:8000
       - 8080:8080
-    networks:
-      - front-tier
     volumes:
       - ./nginx/html:/usr/share/nginx/html
+      - ./nginx/conf.d:/etc/nginx/conf.d
