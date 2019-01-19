@@ -26,8 +26,6 @@ services:
       - front-tier
     ports:
       - 80:80
-      - 8000:8000
-      - 8080:8080
     volumes:
       - ./nginx/html:/usr/share/nginx/html
       - ./nginx/conf.d:/etc/nginx/conf.d
