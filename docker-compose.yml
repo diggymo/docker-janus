@@ -7,7 +7,7 @@ networks:
     driver: bridge
 
 services:
-  janus-gateway:
+  janus:
     image: mcroth/docker-janus:latest 
     container_name: janus-gateway
     volumes:
@@ -19,3 +19,14 @@ services:
     networks:
       - back-tier
       - front-tier
+  web:
+    build: ./nginx/
+    container_name: janus-web
+    ports:
+      - 80:80
+      - 8000:8000
+      - 8080:8080
+    networks:
+      - front-tier
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html
