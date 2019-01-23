@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: janus-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: janus
+  template:
+    metadata:
+      labels:
+        app: janus
+    spec:
+      containers:
+        - name: janus-container
+          image: registry.gitlab.com/morifuji/nand2tetris/janus:latest
+          ports:
+            - containerPort: 8088
+            - containerPort: 8188
+          readinessProbe:
+            httpGet: 
+              path: /janus/info
+              port: 8088

@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata: 
+  name: webrtc-ingress
+spec:
+  rules:
+  # - host: sample.example.com
+  - http:
+      paths:
+      - path: /janus.js
+        backend:
+          serviceName: nginx-port
+          servicePort: 80
+      - path: /janus/*
+        backend:
+          serviceName: janus-port
+          servicePort: 8088
+      - path: /janus-ws/*
+        backend:
+          serviceName: janus-port
+          servicePort: 8188
+  backend:
+    serviceName: nginx-port
+    servicePort: 80
+  # tls:
+  # - hosts:
+  #   - sample.example.com
+  #   secretName: tls-sample
