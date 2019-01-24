@@ -10,6 +10,10 @@ spec:
       protocol: "TCP"
       port: 8088
       targetPort: 8088
+    - name: "janus-https-port"
+      protocol: "TCP"
+      port: 8089
+      targetPort: 8089
     - name: "janus-ws-port"
       protocol: "TCP"
       port: 8188
