@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nginx-container
-          image: registry.gitlab.com/morifuji/nand2tetris/nginx:20190124-2
+          image: registry.gitlab.com/morifuji/nand2tetris/nginx:2019-01-25-1
           ports:
             - containerPort: 80
           resources:

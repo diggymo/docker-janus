@@ -13,12 +13,12 @@ spec:
           servicePort: 80
       - path: /janus
         backend:
-          serviceName: janus-https-port
-          servicePort: 8089
+          serviceName: janus-port
+          servicePort: 8088
       - path: /janus/*
         backend:
-          serviceName: janus-https-port
-          servicePort: 8089
+          serviceName: janus-port
+          servicePort: 8088
       - path: /janus-ws/*
         backend:
           serviceName: janus-port

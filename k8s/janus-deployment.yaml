@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: janus-container
-          image: registry.gitlab.com/morifuji/nand2tetris/janus:20190124-2
+          image: registry.gitlab.com/morifuji/nand2tetris/janus:2019-01-25-1
           ports:
             - containerPort: 8088
             - containerPort: 8089
