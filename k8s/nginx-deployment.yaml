@@ -9,6 +9,9 @@ spec:
       app: nginx
   template:
     metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "80"
       labels:
         app: nginx
     spec:

@@ -2,6 +2,9 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata: 
   name: webrtc-ingress
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "80"
 spec:
   rules:
   # - host: sample.example.com
